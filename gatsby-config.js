@@ -1,6 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Gatsby Starter Muses',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    {
+    resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/post`,
+        name: "markdown-pages",
+      },
+    },
+    {
+    resolve: `gatsby-plugin-react-css-modules`,
+    options: {
+      filetypes: {
+        ".scss": { syntax: `postcss-scss` },
+      },
+      exclude: `\/global\/`,
+    },
+  },
+    'gatsby-transformer-remark'
+  ],
 }
