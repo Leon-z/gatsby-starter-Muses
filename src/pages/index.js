@@ -1,13 +1,29 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
+import Overdrive from 'react-overdrive';
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+import Header from '../components/Header';
+import Profile from '../components/Profile';
+
+import './style/index.module.scss';
+
+class IndexPage extends React.Component {
+  componentWillUnmount() {
+    setTimeout(() => {
+      console.log(22222); 
+    },3000)
+  }
+
+  render() {
+    return (
+      <div styleName="index-page">
+        <Header isHome/>
+        <Overdrive id="profile">
+          <Profile/>
+        </Overdrive>
+      </div>
+    )
+  }
+}
 
 export default IndexPage

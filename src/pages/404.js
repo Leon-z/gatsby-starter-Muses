@@ -1,9 +1,12 @@
 import React from 'react'
+import Overdrive from 'react-overdrive'
+
+import Header from '../components/Header';
 
 const NotFoundPage = () => (
   <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Header/>
+  
   </div>
 )
 

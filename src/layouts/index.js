@@ -2,31 +2,40 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
-import './index.css'
+import PageCard from '../components/PageCard';
+import 'amfe-flexible';
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+import './resize.css';
+import style from './layouts.module.css';
+
+
+
+
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { children, data, ...props } = this.props;
+    return (
+      <div>
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        />
+        <div className={style.container}>
+          <PageCard bgsrc="http://img4.imgtn.bdimg.com/it/u=3026294147,423550763&fm=200&gp=0.jpg">
+          {children()}
+          </PageCard>
+        </div>
+      </div>
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.func,

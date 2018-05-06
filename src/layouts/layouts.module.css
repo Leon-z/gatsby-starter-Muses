@@ -1,0 +1,10 @@
+body {
+  background-color: #34343c;
+  min-height: 90vh;
+
+  padding-top: 10vh;
+
+}
+.container {
+  margin: 0 0.4rem;
+}

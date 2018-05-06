@@ -1,0 +1,56 @@
+$d: 0.2rem;
+
+
+.page-card {
+  position: relative;
+
+  height: 80vh;
+  padding:0.45rem 0.65rem 0;
+
+
+  overflow: hidden;
+  border-radius: 9px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 0 0.4rem 0.01rem #11080a;
+
+  .bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.93;
+    background-color: #32333e;
+  }
+
+  .circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -$d/2;
+    z-index: 1;
+
+    width: $d;
+    height: $d;
+    border-radius: $d/2;
+    box-shadow: 0 0 80px 80px #4f6a75,
+                0 0 200px 200px #4c6770,
+                0 0 250px 250px #485053,
+                0 0 350px 350px #464d55,
+                0 0 400px 400px #44484b;
+    background: #4f6a75;
+  }
+
+  .main {
+    position: relative;
+    z-index: 1;
+  }
+}
